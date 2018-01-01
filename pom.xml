@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.2.RELEASE</version>
+    </parent>
+
+    <artifactId>flight-app-backend</artifactId>
+    <name>Spring Boot Flight App</name>
+    <description>Spring Boot Flight App</description>
+    <packaging>jar</packaging>
+
+    <!-- Profile configuration -->
+    <profiles>
+        <!-- The configuration of the development profile -->
+        <profile>
+            <id>dev</id>
+            <!-- The development profile is active by default -->
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <build.profile.id>dev</build.profile.id>
+            </properties>
+        </profile>
+
+        <!-- The configuration of the testing profile -->
+        <profile>
+            <id>test</id>
+            <properties>
+                <build.profile.id>test</build.profile.id>
+            </properties>
+        </profile>
+
+    </profiles>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <maven-jar-plugin.version>3.0.2</maven-jar-plugin.version>
+        <fixture-factory.version>3.1.0</fixture-factory.version>
+        <mockito.version>1.10.19</mockito.version>
+        <servlet.version>3.1.0</servlet.version>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>spring-release</id>
+            <name>Spring Release</name>
+            <url>https://repo.spring.io/libs-release</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+        <repository>
+            <id>spring-snapshots</id>
+            <name>Spring Snapshots</name>
+            <url>https://repo.spring.io/snapshot</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <!-- Compile -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!-- Runtime -->
+        <!--
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        -->
+        <!-- PostgreSQL -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>br.com.six2six</groupId>
+            <artifactId>fixture-factory</artifactId>
+            <version>${fixture-factory.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>${mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>${servlet.version}</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <version>3.5.1</version>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <source>${java.version}</source>
+                        <target>${java.version}</target>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                </plugin>
+                <plugin>
+                    <!--Generate jar with classes used on other microservices -->
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>${maven-jar-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>jar</id>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>jar</goal>
+                            </goals>
+                            <configuration>
+                                <classifier>api</classifier>
+                                <includes>
+                                    <include>**/api/**</include>
+                                </includes>
+                            </configuration>
+                        </execution>
+                        <execution>
+                            <id>test-jar</id>
+                            <goals>
+                                <goal>test-jar</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+        <filters>
+            <filter>src/main/resources/application-${build.profile.id}.yml</filter>
+        </filters>
+
+        <resources>
+            <resource>
+                <filtering>true</filtering>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
+    </build>
+
+</project>
