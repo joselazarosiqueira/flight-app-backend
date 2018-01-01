@@ -1,0 +1,56 @@
+spring:
+  application:
+    name: management-manager
+  datasource:
+    tomcat:
+      max-active: 20
+      max-idle: 5
+      min-idle: 1
+      test-on-borrow: true
+      validation-query: SELECT 1
+    password: jet@123
+    remove-abandoned: true
+    url: jdbc:postgresql://192.168.10.241:5432/db_test_management?currentSchema=sc_manager
+    driverClassName: org.postgresql.Driver
+    username: postgres
+    validationQuery: SELECT now()
+  jpa:
+    hibernate:
+      ddl-auto: none
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+    shared-cache-mode: none
+    show-sql: true
+  redis:
+    host: 192.168.10.241
+    port: 6379
+server:
+ context-path: /management/manager
+ port: 8083
+
+eureka:
+ client:
+  serviceUrl:
+   defaultZone: http://192.168.10.241:8761/eureka/
+ instance:
+  preferIpAddress: true
+
+endpoints:
+    cors:
+        allow-credentials: true
+        allowed-headers: Content-Type, X-Requested-With, Accept, Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Authorization, Content-Type, Cookie
+        allowed-methods: GET, OPTIONS, PUT, POST, DELETE
+        allowed-origins: '*'
+        max-age: 10
+liquibase:
+    change-log: classpath:/db/db-changelog.xml
+    default-schema: sc_manager
+    drop-first: false
+    enabled: true
+logging:
+    level:
+        org:
+            hibernate: INFO
+            hibernate.type.descriptor.sql.BasicBinder: TRACE
+            springframework: INFO
+
+secret-key: 546sdfsdf14414dsfdf145asd144asdswdsfd

@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: flight-app
+  datasource:
+    tomcat:
+      max-active: 20
+      max-idle: 5
+      min-idle: 1
+      test-on-borrow: true
+      validation-query: SELECT 1
+    password: 123456
+    remove-abandoned: true
+    url: jdbc:postgresql://localhost:5432/db_dev_atech?currentSchema=sc_flight
+    driverClassName: org.postgresql.Driver
+    username: postgres
+    validationQuery: SELECT now()
+  jpa:
+    hibernate:
+      ddl-auto: create
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+    shared-cache-mode: none
+    show-sql: true
+
+server:
+ context-path: /flight/app
+ port: 8081
+
+endpoints:
+    cors:
+        allow-credentials: true
+        allowed-headers: Content-Type, X-Requested-With, Accept, Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Authorization, Content-Type, Cookie
+        allowed-methods: GET, OPTIONS, PUT, POST, DELETE
+        allowed-origins: '*'
+        max-age: 10
+logging:
+    level:
+        org:
+            hibernate: INFO
+            hibernate.type.descriptor.sql.BasicBinder: TRACE
+            springframework: INFO
