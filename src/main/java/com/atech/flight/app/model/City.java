@@ -1,9 +1,12 @@
 package com.atech.flight.app.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Entity to manage Cities
@@ -24,6 +27,16 @@ public class City {
     private String name;
     private String state;
     private String country;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "to", fetch = FetchType.LAZY, cascade = { CascadeType.REMOVE, CascadeType.REFRESH})
+    private List<Flight> toFlights = new ArrayList<>();
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "from", fetch = FetchType.LAZY, cascade = { CascadeType.REMOVE, CascadeType.REFRESH})
+    private List<Flight> fromFlights = new ArrayList<>();
+
+
 
     public Long getId() {
         return id;

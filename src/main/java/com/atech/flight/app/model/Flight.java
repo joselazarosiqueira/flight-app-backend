@@ -28,10 +28,12 @@ public class Flight {
     @Column(name = "flight_number", nullable = false)
     private String flightNumber;
 
-    @Column(name = "to_city_id")
-    private Long to;
-    @Column(name = "from_city_id")
-    private Long from;
+    @ManyToOne
+    @JoinColumn(name = "to_city_id")
+    private City to;
+    @ManyToOne
+    @JoinColumn(name = "from_city_id")
+    private City from;
 
     @Column(name = "departure_date_time")
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
@@ -69,19 +71,19 @@ public class Flight {
         this.flightNumber = flightNumber;
     }
 
-    public Long getTo() {
+    public City getTo() {
         return to;
     }
 
-    public void setTo(Long to) {
+    public void setTo(City to) {
         this.to = to;
     }
 
-    public Long getFrom() {
+    public City getFrom() {
         return from;
     }
 
-    public void setFrom(Long from) {
+    public void setFrom(City from) {
         this.from = from;
     }
 
