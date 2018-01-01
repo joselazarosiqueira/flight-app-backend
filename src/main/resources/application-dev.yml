@@ -16,7 +16,7 @@ spring:
     validationQuery: SELECT now()
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
       dialect: org.hibernate.dialect.PostgreSQLDialect
     shared-cache-mode: none
     show-sql: true
