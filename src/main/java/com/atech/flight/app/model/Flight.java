@@ -2,9 +2,11 @@ package com.atech.flight.app.model;
 
 import com.atech.flight.app.utils.LocalDateTimeAttributeConverter;
 import com.atech.flight.app.utils.LocalDateTimeDeserializer;
+import com.atech.flight.app.utils.LocalDateTimeSerializer;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -36,10 +38,14 @@ public class Flight {
     private City from;
 
     @Column(name = "departure_date_time")
+    @JsonSerialize(using = LocalDateTimeSerializer.class)
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     @Convert(converter = LocalDateTimeAttributeConverter.class)
     private LocalDateTime departureDateTime;
+
+
     @Column(name = "arrival_date_time")
+    @JsonSerialize(using = LocalDateTimeSerializer.class)
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     @Convert(converter = LocalDateTimeAttributeConverter.class)
     private LocalDateTime arrivalDateTime;
