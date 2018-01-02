@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 /**
  * The Expcetion Handler for all Flight Endpoints
  *
- * @author  José Júnior <jose.junior@jetsoft.com.br>
+ * @author  José Júnior <joselazarosiqueira@gmail.com>
  */
 @RestControllerAdvice
 public class ExceptionHandlerController {

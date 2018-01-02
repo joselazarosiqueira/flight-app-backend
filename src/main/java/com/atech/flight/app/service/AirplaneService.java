@@ -1,13 +1,13 @@
 package com.atech.flight.app.service;
 
-import com.atech.flight.app.model.Flight;
+import com.atech.flight.app.model.Airplane;
 import com.atech.flight.app.utils.GenericCrudService;
 
 /**
- * The API for Flight model
+ * The API for Airplane model
  *
  * @author José Júnior <joselazarosiqueira@gmail.com>
  */
-public interface FlightService extends GenericCrudService<Flight, Long>{
+public interface AirplaneService extends GenericCrudService<Airplane, Long> {
 
 }

@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * The Controller of all URLs for Flight Model
  *
- * @author José Júnior <jose.junior@jetsoft.com.br>
+ * @author José Júnior <joselazarosiqueira@gmail.com>
  */
 @RestController
 @RequestMapping(value = { "/flights" })

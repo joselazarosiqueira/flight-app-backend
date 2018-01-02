@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 /**
  * Configuration class to inject spring context.
  *
- * @author José Júnior <jose.junior@jetsoft.com.br>
+ * @author José Júnior <joselazarosiqueira@gmail.com>
  */
 @Configuration
 @EnableAutoConfiguration

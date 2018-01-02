@@ -1,6 +1,10 @@
 package com.atech.flight.app.api.error;
 
-
+/**
+ * Default API Error Code for endpoints
+ *
+ * @author  José Júnior <joselazarosiqueira@gmail.com>
+ */
 public class ApiError {
 
     private String errorMessage;

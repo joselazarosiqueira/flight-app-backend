@@ -1,4 +1,4 @@
-package com.jetsoft.platform.utils.jsondeserializer;
+package com.atech.flight.app.utils;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
@@ -13,7 +13,7 @@ import java.time.format.DateTimeFormatter;
  * Deserializer the string value that follows the pattern <b>dd-MM-yyyy HH:mm:ss</b> to
  * {@link LocalDate}.
  * 
- * @author José Júnior <jose.junior@jetsoft.com.br>
+ * @author José Júnior <joselazarosiqueira@gmail.com>
  */
 public class LocalDateTimeDeserializer extends JsonDeserializer<LocalDateTime> {
 

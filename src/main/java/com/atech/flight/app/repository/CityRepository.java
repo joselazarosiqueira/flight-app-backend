@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 /**
  * The Data Access Object for City Model
  *
- * @author José Júnior <jose.junior@jetsoft.com.br>
+ * @author José Júnior <joselazarosiqueira@gmail.com>
  */
 @Repository
 public interface CityRepository extends JpaRepository<City, Long> {

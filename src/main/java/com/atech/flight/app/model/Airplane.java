@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Entity to manage Airplanes
  *
- * @author José Júnior <jose.junior@jetsoft.com.br>
+ * @author José Júnior <joselazarosiqueira@gmail.com>
  */
 @Entity
 @Table(name = "tb_airplane")

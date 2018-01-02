@@ -1,10 +1,12 @@
-# flight-app-backend
+# Flight-app-backend
 
 This is a Spring Boot Application to manage simple Flights
 
 ## Requirements
 In order to run the application you need to configure the following items:
+
 -PostgreSQL datasource:
+
 1) using dev profile:
  db_dev_atech database and sc_flight schema
 

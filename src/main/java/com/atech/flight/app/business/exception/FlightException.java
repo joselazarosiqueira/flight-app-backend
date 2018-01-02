@@ -3,7 +3,7 @@ package com.atech.flight.app.business.exception;
 /**
  * The class to handle exceptions on Flight App.
  *
- * @author  José Júnior <jose.junior@jetsoft.com.br>
+ * @author  José Júnior <joselazarosiqueira@gmail.com>
  */
 public class FlightException extends Exception{
 

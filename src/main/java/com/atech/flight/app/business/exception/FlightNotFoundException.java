@@ -3,7 +3,7 @@ package com.atech.flight.app.business.exception;
 /**
  * Thrown if a Flight does not exist.
  *
- * @author José Júnior <jose.junior@jetsoft.com.br>
+ * @author José Júnior <joselazarosiqueira@gmail.com>
  */
 
 public class FlightNotFoundException extends Exception{

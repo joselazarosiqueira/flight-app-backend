@@ -1,10 +1,10 @@
 package com.atech.flight.app.model;
 
+import com.atech.flight.app.utils.LocalDateTimeAttributeConverter;
+import com.atech.flight.app.utils.LocalDateTimeDeserializer;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.jetsoft.platform.utils.jpa.LocalDateTimeAttributeConverter;
-import com.jetsoft.platform.utils.jsondeserializer.LocalDateTimeDeserializer;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 /**
  * Entity to manage Flights
  *
- * @author José Júnior <jose.junior@jetsoft.com.br>
+ * @author José Júnior <joselazarosiqueira@gmail.com>
  */
 @Entity
 @Table(name = "tb_flight")

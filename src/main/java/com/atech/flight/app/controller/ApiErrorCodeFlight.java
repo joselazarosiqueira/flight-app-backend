@@ -5,9 +5,8 @@ import com.atech.flight.app.api.error.ApiErrorCode;
 /**
  * The API Error Code for all Flight Endpoints
  *
- * @author  José Júnior <jose.junior@jetsoft.com.br>
+ * @author  José Júnior <joselazarosiqueira@gmail.com>
  */
-
 public enum ApiErrorCodeFlight implements ApiErrorCode {
 
     /**

@@ -5,13 +5,13 @@ import java.util.List;
 /**
  * Utility to Simplify CRUD operations
  *
- * @author José Júnior <jose.junior@jetsoft.com.br>
+ * @author José Júnior <joselazarosiqueira@gmail.com>
  */
 public interface GenericCrudService<T, ID> {
 
-    public T save(T vo);
+    public T save(T entity);
 
-    public T update(T vo);
+    public T update(T entity);
 
     public void delete(ID id);
 
