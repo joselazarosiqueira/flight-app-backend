@@ -22,7 +22,7 @@ spring:
     show-sql: true
 
 server:
- context-path: /flight/app
+ context-path: /flight-app
  port: 8081
 
 endpoints:

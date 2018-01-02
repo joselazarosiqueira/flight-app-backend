@@ -8,7 +8,7 @@ spring:
       min-idle: 1
       test-on-borrow: true
       validation-query: SELECT 1
-    password: 123456
+    password: jet@123
     remove-abandoned: true
     url: jdbc:postgresql://localhost:5432/db_dev_atech?currentSchema=sc_flight
     driverClassName: org.postgresql.Driver
@@ -22,7 +22,7 @@ spring:
     show-sql: true
 
 server:
- context-path: /flight/app
+ context-path: /flight-app
  port: 8081
 
 endpoints:
