@@ -27,3 +27,6 @@ mvn test
 ## Further help
 
 Please contact the author: joselazarosiqueira@gmail.com
+
+## ER Model
+![alt text](https://gitlab.com/joselazaro/flight-app-backend/blob/master/ER-model.png)
