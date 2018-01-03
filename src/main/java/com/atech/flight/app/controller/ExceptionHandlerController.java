@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import javax.persistence.EntityNotFoundException;
 
 /**
- * The Expcetion Handler for all Flight Endpoints
+ * The Exception Handler for all Flight Endpoints
  *
  * @author  José Júnior <joselazarosiqueira@gmail.com>
  */
