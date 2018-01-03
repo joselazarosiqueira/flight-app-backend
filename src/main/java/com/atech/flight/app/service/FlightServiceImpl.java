@@ -82,6 +82,11 @@ public class FlightServiceImpl implements FlightService {
 
     @Override
     public Flight findOne(Long id) {
+        Flight entityFromDB = flightRepository.findOne(id);
+
+        if (entityFromDB == null) {
+            throw new EntityNotFoundException("[id:" + id + "]");
+        }
         return flightRepository.findOne(id);
     }
 }

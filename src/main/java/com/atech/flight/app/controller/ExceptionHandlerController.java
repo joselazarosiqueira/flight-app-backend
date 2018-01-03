@@ -2,11 +2,12 @@ package com.atech.flight.app.controller;
 
 import com.atech.flight.app.api.error.ApiError;
 import com.atech.flight.app.business.exception.FlightException;
-import com.atech.flight.app.business.exception.FlightNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+import javax.persistence.EntityNotFoundException;
 
 /**
  * The Expcetion Handler for all Flight Endpoints
@@ -17,9 +18,9 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class ExceptionHandlerController {
 
     @ResponseStatus(HttpStatus.CONFLICT)
-    @ExceptionHandler(value = FlightNotFoundException.class)
-    public ApiError flightNotFoundException(FlightNotFoundException e){
-        ApiError error = new ApiError(ApiErrorCodeFlight.FLIGHT_0001);
+    @ExceptionHandler(value = EntityNotFoundException.class)
+    public ApiError flightNotFoundException(EntityNotFoundException e){
+        ApiError error = new ApiError(ApiErrorCodeFlight.COMMON_0000);
         error.setErrorMessage(e.getMessage());
         return error;
     }

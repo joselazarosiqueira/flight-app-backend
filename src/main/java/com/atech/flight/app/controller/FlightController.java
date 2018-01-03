@@ -16,7 +16,6 @@ import java.util.List;
  * @author José Júnior <joselazarosiqueira@gmail.com>
  */
 @RestController
-@RequestMapping(value = { "/flights" })
 public class FlightController {
 
     private final static Logger log = Logger.getLogger(FlightController.class);
@@ -25,31 +24,31 @@ public class FlightController {
     private FlightService flightService;
 
 
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(value = "/flights", method = RequestMethod.GET)
     public @ResponseBody
     ResponseEntity<List<Flight>> getAll() {
         return new ResponseEntity<List<Flight>>(flightService.findAll(), HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/flights/{id}", method = RequestMethod.GET)
     public @ResponseBody ResponseEntity<Flight> getOne(@PathVariable("id") Long id) {
         return new ResponseEntity<Flight>( flightService.findOne(id), HttpStatus.OK);
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(value = "/flights", method = RequestMethod.POST)
     public @ResponseBody ResponseEntity<Flight> save(@RequestBody Flight flight) {
         Flight entity = flightService.save(flight);
 
         return new ResponseEntity<>(entity, HttpStatus.OK);
     }
 
-    @RequestMapping(method = RequestMethod.PUT)
+    @RequestMapping(value = "/flights", method = RequestMethod.PUT)
     public @ResponseBody ResponseEntity<Flight> update(@RequestBody Flight flight) {
         return new ResponseEntity<Flight>(flightService.update(flight), HttpStatus.OK);
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @RequestMapping(value = "/{id}",method = RequestMethod.DELETE)
+    @RequestMapping(value = "/flights/{id}", method = RequestMethod.DELETE)
     public void delete(@PathVariable("id") Long id) {
         flightService.delete(id);
     }

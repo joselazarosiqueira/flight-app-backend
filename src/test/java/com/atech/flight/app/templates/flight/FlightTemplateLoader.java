@@ -33,6 +33,7 @@ public class FlightTemplateLoader implements TemplateLoader {
 
 		Fixture.of(Flight.class).addTemplate(TO_UPDATE, new Rule(){
 			{
+				add("id", "1");
 				add("flightNumber", uniqueRandom("100", "200", "300"));
 				add("departureDateTime", LocalDateTime.parse("2018-12-28T09:11:00-03:00", DateTimeFormatter.ISO_DATE_TIME));
 				add("arrivalDateTime", LocalDateTime.parse("2018-12-29T19:30:00-03:00", DateTimeFormatter.ISO_DATE_TIME));

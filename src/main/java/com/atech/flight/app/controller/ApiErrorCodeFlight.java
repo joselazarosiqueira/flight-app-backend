@@ -14,9 +14,9 @@ public enum ApiErrorCodeFlight implements ApiErrorCode {
      */
     FLIGHT_0000("FLIGHT-0000", "Unexpected error."),
     /**
-     * FLIGHT-0001 Example of message
+     * COMMON-0000 Entity not found
      */
-    FLIGHT_0001("FLIGHT-0001", "Flight does not exists.");
+    COMMON_0000("COMMON-0000", "Entity not found.");
 
     private String code;
     private String message;
