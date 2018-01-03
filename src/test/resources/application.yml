@@ -1,0 +1,25 @@
+spring:
+ application:
+  name: flight-app
+ datasource:
+  url: jdbc:h2:mem:test-db-psql;MODE=POSTGRESQL;DB_CLOSE_ON_EXIT=FALSE
+  platform: h2
+  username: sa
+  password:
+  driverClassName: org.h2.Driver
+  jpa:
+    hibernate:
+    ddl-auto: update
+    database-platform: org.hibernate.dialect.H2Dialect    
+    show-sql: true
+
+server:
+ context-path: /flight-app
+ port: 8081
+
+logging:
+    level:
+        org:
+            hibernate: INFO
+            hibernate.type.descriptor.sql.BasicBinder: TRACE
+            springframework: INFO

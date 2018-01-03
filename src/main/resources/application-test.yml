@@ -25,13 +25,6 @@ server:
  context-path: /flight-app
  port: 8081
 
-endpoints:
-    cors:
-        allow-credentials: true
-        allowed-headers: Content-Type, X-Requested-With, Accept, Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Authorization, Content-Type, Cookie
-        allowed-methods: GET, OPTIONS, PUT, POST, DELETE
-        allowed-origins: '*'
-        max-age: 10
 logging:
     level:
         org:

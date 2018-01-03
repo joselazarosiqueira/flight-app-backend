@@ -27,7 +27,7 @@ public class Flight {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "flight_number", nullable = false)
+    @Column(name = "flight_number", nullable = false, unique = true)
     private String flightNumber;
 
     @ManyToOne
