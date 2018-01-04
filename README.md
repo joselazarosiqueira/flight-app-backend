@@ -13,12 +13,12 @@ In order to run the application you need to configure the following items:
 2) using test profile:
  db_test_atech database and sc_flight schema
 
-## Run
-mvn spring-boot:run -Dspring.profiles.active=dev
-
 ## Build
 
 mvn clean install
+
+## Run
+mvn spring-boot:run -Dspring.profiles.active=dev
 
 ## Running tests
 
